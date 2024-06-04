@@ -80,7 +80,9 @@ resetPlayer: function(classType) {
         }
 
         getHeader.innerHTML = '<p>Task: Choose your move</p>';
+
         getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="PlayerMoves.calcAttack()">Fight!</a>';
+        
         getEnemy.innerHTML = '<img src="assets/images/enemy/' +
         enemy.enemyType.toLowerCase() + '.png" class="assets/images/enemy"><div><h3>' + enemy.enemyType + '</h3><p class="health-enemy">Health: ' + enemy.health + '</p><p>Motivation: ' + enemy.motivation + '</p> <p>Strength: ' + enemy.strength + '</p> <p>Agility: ' + enemy.agility + '</p> <p>Speed: ' + enemy.speed + '</p></div>';
     }
@@ -88,4 +90,3 @@ resetPlayer: function(classType) {
 
 }
 
-console.log('nathan');
