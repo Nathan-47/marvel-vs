@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>not Marvel Battle</title>
 
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <script src="assets/js/gamemanager.js"></script>
-    <script src="assets/js/player.js"></script>
-    <script src="assets/js/enemy.js"></script>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <script src="../components/gamemanager.js"></script>
+    <script src="../components/player.js"></script>
+    <script src="../components/enemy.js"></script>
   </head>
   <body>
     <div class="header">
@@ -17,9 +17,11 @@
     </div>
 
     <div class="interface">
-      <!--The onclick method tells the js what fighter we have chosen to play with-->
+      <!--onClick allows user to pick what fighter they can battle with-->
+      
+      <!-- When clicked gamemanager script will initialise and create an battle with selected fighter ready -->
       <a href="#" onclick="GameManager.setGameStart('Adesanya')">
-        <img src="assets/images/adesanya.png" alt="adesanya" />
+        <img src="../images/player/adesanya.png" alt="adesanya" />
         <div>
           <h3>Israel Adesanya</h3>
           <p>
