@@ -69,16 +69,21 @@ let PlayerMoves = {
     let getPlayerHealth = document.querySelector(".health-player");
     let getEnemyHealth = document.querySelector(".health-enemy");
 
+    const displayHealth = function(arena) {
+      document.querySelector('.arena').textContent = arena;
+    }
+
     //Initiate Attacks
     if (getPlayerSpeed >= getEnemySpeed) {
       let playerAttackValues = playerAttack();
       let totalDamage = playerAttackValues[0] * playerAttackValues[1];
       enemy.health = enemy.health - totalDamage;
-      alert("You hit" + playerAttackValues[0] + "damage" + playerAttackValues[1] + "times.");
+      displayHealth("You hit" + playerAttackValues[0] + "damage" + playerAttackValues[1] + "times.");
         
         //When enemy is at less than or equal to 0 health then the game will announce that the user has won the fight
+
       if (enemy.health <= 0) {
-        alert("Ooooohhh he rocked him! - Joe Rogan");
+        displayHealth('You Win !');
           getPlayerHealth.innerHTML = 'Health; ' + player.health;
           getEnemyHealth.innerHTML = 'Health: 0';
       }
@@ -91,13 +96,17 @@ let PlayerMoves = {
           let enemyAttackValues = enemyAttack();
           let totalDamage = enemyAttackValues[0] * enemyAttackValues[1];
       player.health = player.health - totalDamage;
-      alert("Opponent hit" +  enemyAttackValues[0]  +  "damage"  +  enemyAttackValues[1]  +  "times.");
+      displayHealth("Opponent hit" +  enemyAttackValues[0]  +  "damage"  +  enemyAttackValues[1]  +  "times.");
         
+
+      // HEALTH INDICATOR SECTION //
+
         //When enemy is at less than or equal to 0 health then the game will announce that the user has won the fight
+
       if (player.health <= 0) {
-        alert("I was not impressed by your performance");
-          getPlayerHealth.innerHTML = 'Health: 0';
-          getEnemyHealth.innerHTML = 'Health: 0' + enemy.health;
+        displayHealth('You died!');
+          // getPlayerHealth.innerHTML = 'Health: 0';
+          // getEnemyHealth.innerHTML = 'Health: 0' + enemy.health;
       }
 
       else {
@@ -114,7 +123,7 @@ let PlayerMoves = {
               
               //When player is at less than or equal to 0 health then the game will announce that the user has won the fight
             if (player.health <= 0) {
-              alert("I was not impressed by your performance");
+              displayHealth('You Lost !');
                 getEnemyrHealth.innerHTML = 'Health; ' + enemy.health;
                 getPlayerHealth.innerHTML = 'Health: 0';
             }

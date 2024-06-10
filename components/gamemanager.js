@@ -1,28 +1,28 @@
 //Object that will control what happens at each stage of the game
 let GameManager = {
-setGameStart: function(classType) {
-this.resetPlayer(classType);
+setGameStart: function(playerType) {
+this.resetPlayer(playerType);
 this.setPreFight();
 },
 
     //This allows for users to choose what fighter they want and be able to see the stats of the fighter.
     //The class types are seperate via fighters names giving them there unique id.
-resetPlayer: function(classType) {
-    switch (classType) {
+resetPlayer: function(playerType) {
+    switch (playerType) {
         case "Adesanya":
-            player = new Player(classType , 190, 100, 70, 90, 90);
+            player = new Player(playerType , 100, 100, 70, 90, 90);
             break;
         
             case "Jones":
-                player = new Player(classType , 200, 75, 95, 80, 90);
+                player = new Player(playerType , 200, 75, 95, 80, 90);
             break;
         
             case "McGregor":
-                player = new Player(classType , 90, 0, 70, 100, 100);
+                player = new Player(playerType , 90, 0, 70, 100, 100);
             break;
         
             case "Edwards":
-                player = new Player(classType , 180, 90, 80, 80, 80);
+                player = new Player(playerType , 180, 90, 80, 80, 80);
             break;
         
             default:
@@ -33,7 +33,7 @@ resetPlayer: function(classType) {
     //below can be entered.
     let getInterface = document.querySelector(".interface");
     getInterface.innerHTML = '<img src="assets/images/' +
-        classType.toLowerCase() + '.png" class="assets/images"><div><h3>' + classType + '</h3><p class="health-player">Health: ' + player.health + '</p><p>Motivation: ' + player.motivation + '</p> <p>Strength: ' + player.strength + '</p> <p>Agility: ' + player.agility + '</p> <p>Speed: ' + player.speed + '</p></div>';
+        playerType.toLowerCase() + '.png" class="assets/images"><div><h3>' + playerType + '</h3><p class="health-player">Health: ' + player.health + '</p><p>Motivation: ' + player.motivation + '</p> <p>Strength: ' + player.strength + '</p> <p>Agility: ' + player.agility + '</p> <p>Speed: ' + player.speed + '</p></div>';
 },
 
     setPreFight: function () {
