@@ -35,6 +35,8 @@ body {
   color: #f8b700;
 }
 
+h1 {color: #fafafa;}
+
 .interface {
   padding: 0;
   width: 100%;
@@ -120,13 +122,10 @@ body {
 
 .arena {
   width: 100%;
-  height: 180px;
-  background-color: #1d373d;
-  background-image: url("");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 35vh;
-  visibility: hidden;
+  height: 100px;
+  background-color: #fafafabc;
+  padding-top: 50px;
+  text-align: center;
 }
 
 .enemy {

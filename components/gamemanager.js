@@ -58,28 +58,25 @@ resetPlayer: function(playerType) {
         let enemy02 = new Enemy("Thompson", 180, 70, 70, 80, 80);
         let enemy03 = new Enemy("Whittaker", 190, 90, 90, 80, 80);
         
-        //Wiil choose a random opponent between 0 - 1
+        //Wiil choose a random opponent between 1 - 4
         let chooseRandomEnemy = Math.floor(Math.random() * Math.floor(4));
 
         //Console log used to test out the random number generator to see if if outputs the max values needed
-        //console.log(chooseRandomEnemy);
+        // console.log(chooseRandomEnemy);
 
         switch (chooseRandomEnemy) {
             case 0: enemy = enemy00;
                 break;
-            
-            case 1: enemy = enemy01;
+                
+                case 1: enemy = enemy01;
                 break;
-            
+                
                 case 2: enemy = enemy02;
                 break;
-            
+                
                 case 3: enemy = enemy03;
-                break;
-            
+                break;     
         }
-
-        getHeader.innerHTML = '<p>Task: Choose your move</p>';
 
         getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="PlayerMoves.calcAttack()">Fight!</a>';
         

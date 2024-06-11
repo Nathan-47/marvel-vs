@@ -95,8 +95,10 @@ let PlayerMoves = {
           //Enemy Attacks
           let enemyAttackValues = enemyAttack();
           let totalDamage = enemyAttackValues[0] * enemyAttackValues[1];
-      player.health = player.health - totalDamage;
-      displayHealth("Opponent hit" +  enemyAttackValues[0]  +  "damage"  +  enemyAttackValues[1]  +  "times.");
+          
+          player.health = player.health - totalDamage;
+          
+          displayHealth("Opponent hit" +  enemyAttackValues[0]  +  "damage"   +   enemyAttackValues[1]   +  "times.");
         
 
       // HEALTH INDICATOR SECTION //
