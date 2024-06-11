@@ -59,7 +59,7 @@ resetPlayer: function(playerType) {
         let enemy03 = new Enemy("Whittaker", 190, 90, 90, 80, 80);
         
         //Wiil choose a random opponent between 1 - 4
-        let chooseRandomEnemy = Math.floor(Math.random() * Math.floor(4));
+        let chooseRandomEnemy = Math.trunc(Math.random() * Math.trunc(4));
 
         //Console log used to test out the random number generator to see if if outputs the max values needed
         // console.log(chooseRandomEnemy);

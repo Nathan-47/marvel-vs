@@ -30,12 +30,12 @@ let PlayerMoves = {
         calcBaseDamage = (player.strength * player.agility) / 1000;
       }
 
-      let offsetDamage = Math.floor(Math.random() * Math.floor(10));
+      let offsetDamage = Math.trunc(Math.random() * Math.trunc(10));
       let calcOutputDamage = calcBaseDamage + offsetDamage;
 
       //Number of hits the fighter makes
       let numberOfHits =
-        Math.floor((Math.random() * Math.floor(player.agility / 10)) / 2) + 1;
+        Math.trunc((Math.random() * Math.trunc(player.agility / 10)) / 2) + 1;
 
       //Place the total damage in an array to gives the number and return it to the user
       let attackValues = [calcOutputDamage, numberOfHits];
@@ -54,12 +54,12 @@ let PlayerMoves = {
         calcBaseDamage = (enemy.strength * enemy.agility) / 1000;
       }
 
-      let offsetDamage = Math.floor(Math.random() * Math.floor(10));
+      let offsetDamage = Math.trunc(Math.random() * Math.trunc(10));
       let calcOutputDamage = calcBaseDamage + offsetDamage;
 
       //Number of hits the fighter makes
       let numberOfHits =
-        Math.floor((Math.random() * Math.floor(enemy.agility / 10)) / 2) + 1;
+        Math.trunc((Math.random() * Math.trunc(enemy.agility / 10)) / 2) + 1;
 
       //Place the total damage in an array to gives the number and return it to the user
       let attackValues = [calcOutputDamage, numberOfHits];
