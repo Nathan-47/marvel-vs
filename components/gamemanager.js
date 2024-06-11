@@ -14,15 +14,15 @@ resetPlayer: function(playerType) {
             break;
         
             case "Jones":
-                player = new Player(playerType , 200, 75, 95, 80, 90);
+                player = new Player(playerType , 100, 75, 95, 80, 90);
             break;
         
             case "McGregor":
-                player = new Player(playerType , 90, 0, 70, 100, 100);
+                player = new Player(playerType , 100, 0, 70, 100, 100);
             break;
         
             case "Edwards":
-                player = new Player(playerType , 180, 90, 80, 80, 80);
+                player = new Player(playerType , 100, 90, 80, 80, 80);
             break;
         
             default:
@@ -41,9 +41,11 @@ resetPlayer: function(playerType) {
         let getActions = document.querySelector(".actions");
         let getArena = document.querySelector(".arena");
 
-        getHeader.innerHTML = '<p>Task: Find an opponent</p>';
+        // getHeader.innerHTML = '<p>Task: Find an opponent</p>';
+
         getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="GameManager.setFight()">Search for Opponent</a>';
-        getArena.style.visibility = "visible";
+
+        // getArena.style.visibility = "visible";
 
     },
     
