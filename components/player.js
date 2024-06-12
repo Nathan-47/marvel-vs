@@ -64,9 +64,11 @@ let PlayerMoves = {
 
       let calcOutputDamage = calcBaseDamage + offsetDamage;
 
+
       //Number of hits the fighter makes
       let numberOfHits =
         Math.floor((Math.random() * Math.floor(enemy.agility / 10)) / 2) + 1;
+
 
       //Place the total damage in an array to gives the number and return it to the user
       let attackValues = [calcOutputDamage, numberOfHits];
@@ -77,23 +79,29 @@ let PlayerMoves = {
 
     let getEnemyHealth = document.querySelector(".health-enemy");
 
+
     // display battle data on screen arena
     const displayHealth = function(arena) {
       document.querySelector('.arena').textContent = arena;
     }
 
+
     //Initiate Attacks
     if (getPlayerSpeed >= getEnemySpeed) {
       let playerAttackValues = playerAttack();
+
       let totalDamage = playerAttackValues[0] * playerAttackValues[1];
+
       enemy.health = enemy.health - totalDamage;
-      displayHealth("You hit" + playerAttackValues[0] + "damage" + playerAttackValues[1] + "times.");
+
+      displayHealth(`${player.classType}` + playerAttackValues[0] + "damage" + playerAttackValues[1] + "times.");
         
+
         //When enemy is at less than or equal to 0 health then the game will announce that the user has won the fight
 
       if (enemy.health <= 0) {
         displayHealth('You Win !');
-          getPlayerHealth.innerHTML = 'Health; ' + player.health;
+          getPlayerHealth.innerHTML = 'Health: ' + player.health;
           getEnemyHealth.innerHTML = 'Health: 0';
       }
       
@@ -108,22 +116,21 @@ let PlayerMoves = {
           player.health = player.health - totalDamage;
           
           // TODO: Replace the string 'opponent' with character name 
-          displayHealth("Opponent hit" +  enemyAttackValues[0]  +  "damage"   +   enemyAttackValues[1] + "times.");
-        
+          displayHealth(`${enemy.enemyType}` +  enemyAttackValues[0]  +  "damage"   +   enemyAttackValues[1] + "times.");
 
       // HEALTH INDICATOR SECTION //
 
         //When enemy is at less than or equal to 0 health then the game will announce that the user has won the fight
 
-      if (player.health <= 0) {
-        displayHealth('You died!');
-          getPlayerHealth.innerHTML = 'Health: 0';
-          getEnemyHealth.innerHTML = 'Health: 0' + enemy.health;
-      } 
+      // if (player.health <= 0) {
+      //   displayHealth('You died!');
+      //     getPlayerHealth.innerHTML = 'Health: 0';
+      //     getEnemyHealth.innerHTML = 'Health: 0' + enemy.health;
+      // } 
       
-      else {
-        getPlayerHealth.innerHTML = 'Health:' + player.health;
-      }
+      // else {
+      //   getPlayerHealth.innerHTML = 'Health:' + player.health;
+      // }
       }
         }
         
@@ -133,7 +140,7 @@ let PlayerMoves = {
 
             player.health = player.health - totalDamage;
 
-            displayHealth("You hit" + enemyAttackValues[0] + "damage" + enemyAttackValues[1] + "times.");
+            displayHealth(`${enemy.enemyType}` + enemyAttackValues[0] + "damage" + enemyAttackValues[1] + "times.");
               
               //When player is at less than or equal to 0 health then the game will announce that the user has won the fight
             if (player.health <= 0) {
@@ -146,8 +153,9 @@ let PlayerMoves = {
                 //Player Attacks
                 let playerAttackValues = playerAttack();
                 let totalDamage = playerAttackValues[0] * playerAttackValues[1];
+
             enemy.health = enemy.health - totalDamage;
-            displayHealth("Opponent hit" +  playerAttackValues[0]  +  "damage"  +  playerAttackValues[1]  +  "times.");
+            displayHealth(`${player.classType}` +  playerAttackValues[0]  +  "damage"  +  playerAttackValues[1]  +  "times.");
               
               //When enemy is at less than or equal to 0 health then the game will announce that the user has won the fight
             // if (enemy.health <= 0) {
@@ -155,5 +163,8 @@ let PlayerMoves = {
             // }
             }
           }
+
+          console.log(player.classType);
+          console.log(enemy.enemyType);
   }
 };
