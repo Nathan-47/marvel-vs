@@ -100,7 +100,7 @@ let PlayerMoves = {
         //When enemy is at less than or equal to 0 health then the game will announce that the user has won the fight
 
       if (enemy.health <= 0) {
-        displayHealth('You Win !');
+        displayHealth(`${player.classType} wins!`);
           getPlayerHealth.innerHTML = 'Health: ' + player.health;
           getEnemyHealth.innerHTML = 'Health: 0';
       }
@@ -122,11 +122,11 @@ let PlayerMoves = {
 
         //When enemy is at less than or equal to 0 health then the game will announce that the user has won the fight
 
-      // if (player.health <= 0) {
-      //   displayHealth('You died!');
-      //     getPlayerHealth.innerHTML = 'Health: 0';
-      //     getEnemyHealth.innerHTML = 'Health: 0' + enemy.health;
-      // } 
+      if (player.health <= 0) {
+        displayHealth(`You died, ${enemy.enemyType} wins`);
+          getPlayerHealth.innerHTML = 'Health: 0';
+          getEnemyHealth.innerHTML = 'Health: 0' + enemy.health;
+      } 
       
       // else {
       //   getPlayerHealth.innerHTML = 'Health:' + player.health;
