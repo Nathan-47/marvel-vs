@@ -35,7 +35,7 @@ let GameManager = {
         let getInterface = document.querySelector(".interface");
         
         getInterface.innerHTML = '<img src="assets/images/' +
-            player.classType.toLowerCase() + '.png" class="assets/images"><div><h3>' + player.classType + '</h3><p class="health-player">Health: ' + player.health + '</p></div>';
+            player.classType.toLowerCase() + '.png" class="assets/images"><div><h3>' + player.classType + '</h3><p class="health-player"><progress id="healthBarOne" value="100" max="100"> ' + player.health + ' </progress></p></div>';
     },
     
         setPreFight: function () {
@@ -91,7 +91,7 @@ let GameManager = {
             getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="PlayerMoves.calcAttack()">Fight!</a>';
     
             getEnemy.innerHTML = '<img src="assets/images/enemy/' +
-            enemy.enemyType.toLowerCase() + '.png" class="assets/images/enemy"><div><h3>' + enemy.enemyType + '</h3><p class="health-enemy">Health: ' + enemy.health + '</p></div>';
+            enemy.enemyType.toLowerCase() + '.png" class="assets/images/enemy"><div><h3>' + enemy.enemyType + '</h3><p class="health-enemy"><progress id="healthBarTwo" value="100" max="100"> ' + enemy.health + ' </progress></p></div>';
         }
     }
     
