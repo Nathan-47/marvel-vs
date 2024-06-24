@@ -1,29 +1,29 @@
 //Object that will control what happens at each stage of the game
 let GameManager = {
-    setGameStart: function(playerType) {
-    this.setPlayer(playerType);
+    setGameStart: function(classType) {
+    this.setPlayer(classType);
     this.setPreFight();
     },
     
         //This allows for users to choose what fighter they want and be able to see the stats of the fighter.
-    setPlayer: function(playerType) {
+    setPlayer: function(classType) {
 
         //Fighter names giving them their unique id.
-        switch (playerType) {
+        switch (classType) {
             case "Hulk":
-                    player = new Player(playerType, 100, 70, 70, 70, 50);
+                    player = new Player(classType, 100, 70, 70, 70, 50);
                 break;
             
                 case "Iron Man":
-                    player = new Player(playerType, 100, 60, 50, 60, 30);
+                    player = new Player(classType, 100, 60, 50, 60, 30);
                 break;
             
                 case "Wolverine":
-                    player = new Player(playerType, 100, 40, 30, 70, 60);
+                    player = new Player(classType, 100, 40, 30, 70, 60);
                 break;
             
                 case "Spiderman":
-                    player = new Player(playerType, 100, 40, 50, 30, 50);
+                    player = new Player(classType, 100, 40, 50, 30, 50);
                 break;
             
                 default:
@@ -35,7 +35,7 @@ let GameManager = {
         let getInterface = document.querySelector(".interface");
         
         getInterface.innerHTML = '<img src="assets/images/' +
-            playerType.toLowerCase() + '.png" class="assets/images"><div><h3>' + playerType + '</h3><p class="health-player">Health: ' + player.health + '</p></div>';
+            player.classType.toLowerCase() + '.png" class="assets/images"><div><h3>' + player.classType + '</h3><p class="health-player">Health: ' + player.health + '</p></div>';
     },
     
         setPreFight: function () {
