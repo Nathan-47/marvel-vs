@@ -72,9 +72,9 @@ let PlayerMoves = {
     };
 
 
+    // Allows the porgress health bar to read the player and enemy health
     let getPlayerHealth = document.getElementById("healthBarOne");
     getPlayerHealth.value = player.health;
-
 
     let getEnemyHealth = document.getElementById("healthBarTwo");
     getEnemyHealth.value = enemy.health;
@@ -102,8 +102,6 @@ let PlayerMoves = {
       //When enemy is at less than or equal to 0 health then the game will announce that the user has won the fight
       if (enemy.health <= 0) {
         alert("You Win!");
-          // getPlayerHealth.innerHTML = 'Health: ' + player.health;
-          // getEnemyHealth.innerHTML = 'Health: 0';
       }
 
       else {
@@ -114,8 +112,7 @@ let PlayerMoves = {
           
       alert(`${enemy.enemyType}` +  enemyAttackValues[0]  +  "damage"  +  enemyAttackValues[1]  +  "times.");
       
-      // getEnemyHealth.innerHTML = 'Health: ' + enemy.health;
-      // getPlayerHealth.innerHTML = 'Health: ' + player.health;
+      // Display player health updates
       player.health += 1;
       }
         }
@@ -130,38 +127,22 @@ let PlayerMoves = {
             alert(`${classType}` + enemyAttackValues[0] + "damage" + enemyAttackValues[1] + "times.");
               
               //When player is at less than or equal to 0 health then the game will announce that the user has won the fight
-                    //When enemy is at less than or equal to 0 health then the game will announce that the user has won the fight
-
             if (player.health <= 0) {
               alert("You Lost!");
-                getEnemyHealth.innerHTML = 'Health; ' + enemy.health;
-                getPlayerHealth.innerHTML = 'Health: 0';
             }
             
             else {
-                // getPlayerHealth.innerHTML = 'Health: ' + player.health;
-                
-      
+
                 //Player Attacks
                 let playerAttackValues = playerAttack();
                 let totalDamage = playerAttackValues[0] * playerAttackValues[1];
+
             enemy.health = enemy.health - totalDamage;
+
             alert(`${enemy.enemyType}` +  playerAttackValues[0]  +  "damage"  +  playerAttackValues[1]  +  "times.");
 
+            // Display enemy health updates
             enemy.health += 1;
-              
-              //When enemy is at less than or equal to 0 health then the game will announce that the user has won the fight
-            if (enemy.health <= 0) {
-              alert("Ooooohhh he rocked him! - Joe Rogan ");
-                // getEnemyHealth.innerHTML = 'Health: 0';
-                // getPlayerHealth.innerHTML = 'Health: 0' + player.health;
-                
-            }
-      
-            else {
-              // getEnemyHealth.innerHTML = 'Health: ' + enemy.health;
-              enemy.health += 1;
-                }
             }
           }
   }
