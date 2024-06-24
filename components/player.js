@@ -2,13 +2,13 @@
 let player;
 
 //Create an object constructor as their are various fighters with different stats
-function Player(classType, health, motivation, strength, agility, speed) {
+function Player(classType, health, strength, speed, durability, fightIq) {
   this.classType = classType;
   this.health = health;
-  this.motivation = motivation;
   this.strength = strength;
-  this.agility = agility;
   this.speed = speed;
+  this.durability = durability;
+  this.fightIq = fightIq;
 }
 
 //Allow players to attack the opponent
@@ -21,22 +21,21 @@ let PlayerMoves = {
     //Player attacks
     let playerAttack = function () {
       let calcBaseDamage;
-      if (player.motivation > 0) {
-        calcBaseDamage = (player.strength * player.motivation) / 1000;
+      if (player.durability > 0) {
+        calcBaseDamage = (player.strength * player.durability) / 1000;
       }
 
       //This statement is created for fighters that have 0 moivation
       else {
-        calcBaseDamage = (player.strength * player.agility) / 1000;
+        calcBaseDamage = (player.strength * player.speed) / 1000;
       }
 
       let offsetDamage = Math.floor(Math.random() * Math.floor(10));
-
       let calcOutputDamage = calcBaseDamage + offsetDamage;
 
       //Number of hits the fighter makes
       let numberOfHits =
-        Math.floor((Math.random() * Math.floor(player.agility / 10)) / 2) + 1;
+        Math.floor((Math.random() * Math.floor(player.speed / 10)) / 2) + 1;
 
       //Place the total damage in an array to gives the number and return it to the user
       let attackValues = [calcOutputDamage, numberOfHits];
@@ -44,31 +43,28 @@ let PlayerMoves = {
     };
 
 
+    console.log(player.classType);
+    console.log(player.health);
 
-
-    // ENEMY STATS //
 
     //Enemy attacks
     let enemyAttack = function () {
       let calcBaseDamage;
-      if (enemy.motivation > 0) {
-        calcBaseDamage = (enemy.strength * enemy.motivation) / 1000;
+      if (enemy.durability > 0) {
+        calcBaseDamage = (enemy.strength * enemy.durability) / 1000;
       }
 
       //This statement is created for fighters that have 0 moivation
       else {
-        calcBaseDamage = (enemy.strength * enemy.agility) / 1000;
+        calcBaseDamage = (enemy.strength * enemy.speed) / 1000;
       }
 
       let offsetDamage = Math.floor(Math.random() * Math.floor(10));
-
       let calcOutputDamage = calcBaseDamage + offsetDamage;
 
-
-      //Number of hits the fighter makes
+      //Number of hits the fighter 
       let numberOfHits =
-        Math.floor((Math.random() * Math.floor(enemy.agility / 10)) / 2) + 1;
-
+        Math.floor((Math.random() * Math.floor(enemy.speed / 10)) / 2) + 1;
 
       //Place the total damage in an array to gives the number and return it to the user
       let attackValues = [calcOutputDamage, numberOfHits];
@@ -76,14 +72,14 @@ let PlayerMoves = {
     };
 
     let getPlayerHealth = document.querySelector(".health-player");
-
     let getEnemyHealth = document.querySelector(".health-enemy");
 
 
+
     // display battle data on screen arena
-    const displayHealth = function(arena) {
-      document.querySelector('.arena').textContent = arena;
-    }
+    // const displayHealth = function(arena) {
+    //   document.querySelector('.arena').textContent = arena;
+    // }
 
 
     //Initiate Attacks
@@ -94,77 +90,68 @@ let PlayerMoves = {
 
       enemy.health = enemy.health - totalDamage;
 
-      displayHealth(`${player.classType}` + playerAttackValues[0] + "damage" + playerAttackValues[1] + "times.");
+      alert(`${player.classType}` +  "did"  +  playerAttackValues[0]  +  "damage"  +  playerAttackValues[1]  +  "times.");
         
-
         //When enemy is at less than or equal to 0 health then the game will announce that the user has won the fight
-
       if (enemy.health <= 0) {
-        displayHealth(`${player.classType} wins!`);
+        alert("Ooooohhh he rocked him! - Joe Rogan");
           getPlayerHealth.innerHTML = 'Health: ' + player.health;
           getEnemyHealth.innerHTML = 'Health: 0';
       }
-      
+
       else {
-          getEnemyHealth.innerHTML = 'health: ' + enemy.health;
-
-
           //Enemy Attacks
           let enemyAttackValues = enemyAttack();
           let totalDamage = enemyAttackValues[0] * enemyAttackValues[1];
-          
           player.health = player.health - totalDamage;
           
-          // TODO: Replace the string 'opponent' with character name 
-          displayHealth(`${enemy.enemyType}` +  enemyAttackValues[0]  +  "damage"   +   enemyAttackValues[1] + "times.");
-
-      // HEALTH INDICATOR SECTION //
-
-        //When enemy is at less than or equal to 0 health then the game will announce that the user has won the fight
-
-      if (player.health <= 0) {
-        displayHealth(`You died, ${enemy.enemyType} wins`);
-          getPlayerHealth.innerHTML = 'Health: 0';
-          getEnemyHealth.innerHTML = 'Health: 0' + enemy.health;
-      } 
+      alert(`${enemy.enemyType}` +  enemyAttackValues[0]  +  "damage"  +  enemyAttackValues[1]  +  "times.");
       
-      // else {
-      //   getPlayerHealth.innerHTML = 'Health:' + player.health;
-      // }
+      getEnemyHealth.innerHTML = 'Health: ' + enemy.health;
+      getPlayerHealth.innerHTML = 'Health: ' + player.health;
+
       }
         }
+  
         
         else if (getEnemySpeed >= getPlayerSpeed) {
             let enemyAttackValues = playerAttack();
             let totalDamage = enemyAttackValues[0] * enemyAttackValues[1];
 
             player.health = player.health - totalDamage;
-
-            displayHealth(`${enemy.enemyType}` + enemyAttackValues[0] + "damage" + enemyAttackValues[1] + "times.");
+            
+            alert(`${classType}` + enemyAttackValues[0] + "damage" + enemyAttackValues[1] + "times.");
               
               //When player is at less than or equal to 0 health then the game will announce that the user has won the fight
+                    //When enemy is at less than or equal to 0 health then the game will announce that the user has won the fight
+
             if (player.health <= 0) {
-              displayHealth('You Lost !');
-              getEnemyrHealth.innerHTML = 'Health; ' + enemy.health;
-              getPlayerHealth.innerHTML = 'Health: 0';
+              alert("I was not impressed by your performance");
+                getEnemyHealth.innerHTML = 'Health; ' + enemy.health;
+                getPlayerHealth.innerHTML = 'Health: 0';
             }
             
             else {
+                getPlayerHealth.innerHTML = 'Health: ' + player.health;
+                
+      
                 //Player Attacks
                 let playerAttackValues = playerAttack();
                 let totalDamage = playerAttackValues[0] * playerAttackValues[1];
-
             enemy.health = enemy.health - totalDamage;
-            displayHealth(`${player.classType}` +  playerAttackValues[0]  +  "damage"  +  playerAttackValues[1]  +  "times.");
+            alert(`${enemy.enemyType}` +  playerAttackValues[0]  +  "damage"  +  playerAttackValues[1]  +  "times.");
               
               //When enemy is at less than or equal to 0 health then the game will announce that the user has won the fight
-            // if (enemy.health <= 0) {
-            //   displayHealth("Ooooohhh he rocked him! - Joe Rogan ");
-            // }
+            if (enemy.health <= 0) {
+              alert("Ooooohhh he rocked him! - Joe Rogan ");
+                getEnemyHealth.innerHTML = 'Health: 0';
+                getPlayerHealth.innerHTML = 'Health: 0' + player.health;
+            }
+      
+            else {
+              getEnemyHealth.innerHTML = 'Health: ' + enemy.health;
+                }
             }
           }
-
-          console.log(player.classType);
-          console.log(enemy.enemyType);
   }
 };
