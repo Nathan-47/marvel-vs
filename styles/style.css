@@ -170,3 +170,16 @@ h1 {color: #fafafa;}
   color: #d5c8af;
   line-height: 20px;
 }
+
+
+/* Progress Bar styling */
+progress {
+  border-radius: 100px; 
+  width: 100%;
+  height: 10px;
+}
+progress::-webkit-progress-bar {border-radius: 100px;}
+progress::-webkit-progress-value {
+  background-color: green;
+  border-radius: 100px;
+}
