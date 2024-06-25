@@ -14,6 +14,7 @@ function Player(classType, health, strength, speed, durability, fightIq) {
 //Allow players to attack the opponent
 let PlayerMoves = {
   calcAttack: function () {
+
     //Determines who attacks first
     let getPlayerSpeed = player.speed;
     let getEnemySpeed = enemy.speed;
@@ -22,7 +23,7 @@ let PlayerMoves = {
     let playerAttack = function () {
       let calcBaseDamage;
       if (player.durability > 0) {
-        calcBaseDamage = (player.strength * player.durability) / 1000;
+        calcBaseDamage = (player.strength * player.fightIq) / 1000;
       }
 
       //This statement is created for fighters that have 0 moivation
@@ -51,7 +52,7 @@ let PlayerMoves = {
     let enemyAttack = function () {
       let calcBaseDamage;
       if (enemy.durability > 0) {
-        calcBaseDamage = (enemy.strength * enemy.durability) / 1000;
+        calcBaseDamage = (enemy.strength * enemy.fightIq) / 1000;
       }
 
       //This statement is created for fighters that have 0 moivation
@@ -87,7 +88,7 @@ let PlayerMoves = {
     // }
 
 
-    //Initiate Attacks
+    //Initiate Attacks - If player is faster than they attack first if not then enemy attacks first
     if (getPlayerSpeed >= getEnemySpeed) {
       let playerAttackValues = playerAttack();
 
@@ -96,7 +97,8 @@ let PlayerMoves = {
       enemy.health = enemy.health - totalDamage;
 
       alert(`${player.classType}` +  "did"  +  playerAttackValues[0]  +  "damage"  +  playerAttackValues[1]  +  "times.");
-        
+      
+      // Display enemy health updates
       enemy.health += 1;
 
       //When enemy is at less than or equal to 0 health then the game will announce that the user has won the fight
@@ -105,7 +107,7 @@ let PlayerMoves = {
       }
 
       else {
-          //Enemy Attacks
+          //Enemy Attacks first if faster than player
           let enemyAttackValues = enemyAttack();
           let totalDamage = enemyAttackValues[0] * enemyAttackValues[1];
           player.health = player.health - totalDamage;
@@ -117,7 +119,6 @@ let PlayerMoves = {
       }
         }
   
-        
         else if (getEnemySpeed >= getPlayerSpeed) {
             let enemyAttackValues = playerAttack();
             let totalDamage = enemyAttackValues[0] * enemyAttackValues[1];
