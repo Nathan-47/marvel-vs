@@ -81,6 +81,17 @@ let PlayerMoves = {
     getEnemyHealth.value = enemy.health;
 
 
+    // Enemy power boost 
+    function checkPlayerHealth () {
+            // Enemy receives boost depending on their durability status
+            if (enemy.health <= 20 && enemy.durability >= 60 && enemy.fightIq > 50) {
+              console.log('enemy recieves power buff');
+              enemy.health = enemy.health - 5;
+              console.log(enemy.health);
+              // getEnemyHealth.textContent = 50;
+            }
+    }
+
 
     // display battle data on screen arena
     // const displayHealth = function(arena) {
@@ -107,13 +118,6 @@ let PlayerMoves = {
         alert("You Win!");
       }
 
-      // Enemy receives 50% boost depending on their durability status
-      else if (enemy.health <= 50 & enemy.durability >= 60 & enemy.fightIq > 50) {
-        console.log('enemy recieves boost');
-        enemy.health = +50;
-        getEnemyHealth.textContent = 50;
-      }
-
       else {
           //Enemy Attacks first if faster than player
           let enemyAttackValues = enemyAttack();
@@ -124,6 +128,8 @@ let PlayerMoves = {
       
       // Display player health updates
       player.health += 1;
+
+      checkPlayerHealth()
       }
         }
   

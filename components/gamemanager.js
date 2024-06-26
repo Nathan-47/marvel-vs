@@ -61,9 +61,9 @@ let GameManager = {
             
 
             //Create enemies
-            let enemy00 = new Enemy("Magneto", 100, 20, 40, 60, 30);
-            let enemy01 = new Enemy("Venom", 100, 50, 30, 50, 40);
-            let enemy02 = new Enemy("Abomination", 100, 70, 20, 60, 40);
+            let enemy00 = new Enemy("Magneto", 100, 20, 40, 60, 70);
+            let enemy01 = new Enemy("Venom", 100, 50, 30, 50, 70);
+            let enemy02 = new Enemy("Abomination", 100, 70, 20, 60, 70);
             let enemy03 = new Enemy("Sabretooth", 100, 40, 20, 70, 70);
             
 
