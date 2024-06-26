@@ -28,15 +28,15 @@ let PlayerMoves = {
 
       //This statement is created for fighters that have 0 moivation
       else {
-        calcBaseDamage = (player.strength * player.speed) / 1000;
+        calcBaseDamage = Math.ceil(player.strength * player.speed) / 100;
       }
 
-      let offsetDamage = Math.floor(Math.random() * Math.floor(10));
-      let calcOutputDamage = calcBaseDamage + offsetDamage;
+      let offsetDamage = Math.floor(Math.random() * Math.round(10));
+      let calcOutputDamage = Math.trunc(calcBaseDamage + offsetDamage);
 
       //Number of hits the fighter makes
       let numberOfHits =
-        Math.floor((Math.random() * Math.floor(player.speed / 10)) / 2) + 1;
+        Math.trunc((Math.random() * Math.round(player.speed / 10)) / 2) + 1;
 
       //Place the total damage in an array to gives the number and return it to the user
       let attackValues = [calcOutputDamage, numberOfHits];
@@ -44,8 +44,7 @@ let PlayerMoves = {
     };
 
 
-    console.log(player.health);
-     console.log(enemy.health);
+    //  console.log(enemy.health);
 
 
     //Enemy attacks
@@ -60,12 +59,13 @@ let PlayerMoves = {
         calcBaseDamage = (enemy.strength * enemy.speed) / 1000;
       }
 
-      let offsetDamage = Math.floor(Math.random() * Math.floor(10));
-      let calcOutputDamage = calcBaseDamage + offsetDamage;
+      let offsetDamage = Math.floor(Math.random() * Math.round(10));
+      let calcOutputDamage = Math.trunc(calcBaseDamage + offsetDamage);
+      console.log(calcOutputDamage);
 
       //Number of hits the fighter 
       let numberOfHits =
-        Math.floor((Math.random() * Math.floor(enemy.speed / 10)) / 2) + 1;
+        Math.round((Math.random() * Math.round(enemy.speed / 10)) / 2) + 1;
 
       //Place the total damage in an array to gives the number and return it to the user
       let attackValues = [calcOutputDamage, numberOfHits];
