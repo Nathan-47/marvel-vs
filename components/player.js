@@ -19,6 +19,8 @@ let PlayerMoves = {
     let getPlayerSpeed = player.speed;
     let getEnemySpeed = enemy.speed;
 
+
+
     //Player attacks
     let playerAttack = function () {
       let calcBaseDamage;
@@ -44,7 +46,6 @@ let PlayerMoves = {
     };
 
 
-    //  console.log(enemy.health);
 
 
     //Enemy attacks
@@ -81,22 +82,21 @@ let PlayerMoves = {
     getEnemyHealth.value = enemy.health;
 
 
-    // Enemy power boost 
-    function checkPlayerHealth () {
+    // Enemy health boost 
+    function enemyHealthBoost () {
             // Enemy receives boost depending on their durability status
-            if (enemy.health <= 20 && enemy.durability >= 60 && enemy.fightIq > 50) {
+            if (enemy.health <= 20 && enemy.durability >= 50 && enemy.fightIq > 50) {
               console.log('enemy recieves power buff');
-              enemy.health = enemy.health - 5;
+              enemy.health = enemy.health - 1;
               console.log(enemy.health);
-              // getEnemyHealth.textContent = 50;
             }
     }
 
 
     // display battle data on screen arena
-    // const displayHealth = function(arena) {
-    //   document.querySelector('.arena').textContent = arena;
-    // }
+    const displayHealth = function(arena) {
+      document.querySelector('.arena').textContent = arena;
+    }
 
 
     //Initiate Attacks - If player is faster than they attack first if not then enemy attacks first
@@ -115,7 +115,7 @@ let PlayerMoves = {
 
       //When enemy is at less than or equal to 0 health then the game will announce that the user has won the fight
       if (enemy.health <= 0) {
-        alert("You Win!");
+        displayHealth(`${player.classType} wins!`);
       }
 
       else {
@@ -129,7 +129,7 @@ let PlayerMoves = {
       // Display player health updates
       player.health += 1;
 
-      checkPlayerHealth()
+      enemyHealthBoost()
       }
         }
   
@@ -143,7 +143,7 @@ let PlayerMoves = {
               
               //When player is at less than or equal to 0 health then the game will announce that the user has won the fight
             if (player.health <= 0) {
-              alert("You Lost!");
+              displayHealth(`${enemy.enemyType} wins!`);
             }
             
             else {
