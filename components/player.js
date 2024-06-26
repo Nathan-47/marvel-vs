@@ -61,7 +61,7 @@ let PlayerMoves = {
 
       let offsetDamage = Math.floor(Math.random() * Math.round(10));
       let calcOutputDamage = Math.trunc(calcBaseDamage + offsetDamage);
-      console.log(calcOutputDamage);
+      // console.log(calcOutputDamage);
 
       //Number of hits the fighter 
       let numberOfHits =
@@ -95,6 +95,7 @@ let PlayerMoves = {
       let totalDamage = playerAttackValues[0] * playerAttackValues[1];
 
       enemy.health = enemy.health - totalDamage;
+      console.log(enemy.health);
 
       alert(`${player.classType}` +  "did"  +  playerAttackValues[0]  +  "damage"  +  playerAttackValues[1]  +  "times.");
       
@@ -104,6 +105,13 @@ let PlayerMoves = {
       //When enemy is at less than or equal to 0 health then the game will announce that the user has won the fight
       if (enemy.health <= 0) {
         alert("You Win!");
+      }
+
+      // Enemy receives 50% boost depending on their durability status
+      else if (enemy.health <= 50 & enemy.durability >= 60 & enemy.fightIq > 50) {
+        console.log('enemy recieves boost');
+        enemy.health = +50;
+        getEnemyHealth.textContent = 50;
       }
 
       else {
