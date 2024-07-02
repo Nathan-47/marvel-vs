@@ -147,7 +147,6 @@ let PlayerMoves = {
               //When player is at less than or equal to 0 health then the game will announce that the user has won the fight
             if (player.health <= 0) {
               displayHealth(`${enemy.enemyType} wins!`);
-
             }
             
             else {
