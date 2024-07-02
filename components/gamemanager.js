@@ -86,10 +86,6 @@ let GameManager = {
                 case 3: enemy = enemy03;
                 break;
             }
-
-
-            // Click to fight
-            getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="PlayerMoves.calcAttack()">Fight!</a>';
     
             getEnemy.innerHTML = '<img src="assets/images/enemy/' +
             enemy.enemyType.toLowerCase() + '.png" class="assets/images/enemy"><div><h3>' + enemy.enemyType + '</h3><p class="health-enemy"><progress id="healthBarTwo" value="100" max="100"> ' + enemy.health + ' </progress></p></div>';
