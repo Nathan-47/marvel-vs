@@ -1,3 +1,5 @@
+'use strict';
+
 //The let player is within the global scope and can be accessed anywhere
 let player;
 
@@ -34,6 +36,7 @@ let PlayerMoves = {
       }
 
       let offsetDamage = Math.floor(Math.random() * Math.round(10));
+
       let calcOutputDamage = Math.trunc(calcBaseDamage + offsetDamage);
 
       //Number of hits the fighter makes
@@ -61,8 +64,8 @@ let PlayerMoves = {
       }
 
       let offsetDamage = Math.floor(Math.random() * Math.round(10));
+
       let calcOutputDamage = Math.trunc(calcBaseDamage + offsetDamage);
-      // console.log(calcOutputDamage);
 
       //Number of hits the fighter 
       let numberOfHits =
@@ -84,7 +87,7 @@ let PlayerMoves = {
 
     // Enemy health boost 
     function enemyHealthBoost () {
-            // Enemy receives boost depending on their durability status
+            // Enemy receives boost depending on their durability and fight IQ status
             if (enemy.health <= 20 && enemy.durability >= 50 && enemy.fightIq > 50) {
               console.log('enemy recieves power buff');
               enemy.health = enemy.health - 1;
@@ -144,6 +147,7 @@ let PlayerMoves = {
               //When player is at less than or equal to 0 health then the game will announce that the user has won the fight
             if (player.health <= 0) {
               displayHealth(`${enemy.enemyType} wins!`);
+
             }
             
             else {

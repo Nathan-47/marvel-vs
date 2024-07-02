@@ -1,3 +1,5 @@
+'use strict';
+
 let enemy;
 
 // Enemy player stats will read from this

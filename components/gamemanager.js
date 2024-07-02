@@ -1,3 +1,5 @@
+'use strict';
+
 //Object that will control what happens at each stage of the game
 let GameManager = {
     setGameStart: function(classType) {
@@ -40,14 +42,13 @@ let GameManager = {
     
         setPreFight: function () {
             let getActions = document.querySelector(".actions");
-
     
             TODO:// Place the not Marvel logo here
             // getHeader.innerHTML = '<p>Task: Find an opponent</p>';
 
 
             //Search for opponent to battle
-            getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="GameManager.setFight()">Search for Opponent</a>';
+            getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="GameManager.setFight()">Search for Opponent</a>';        
         },
         
 
