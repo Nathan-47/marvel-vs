@@ -85,8 +85,9 @@ h1 {color: #fafafa;}
   line-height: 20px;
 }
 
-.btn-prefight {
-  width: 100% !important;
+#btn--search {
+  width: 50% !important;
+  display: none;
 }
 
 .actions {
