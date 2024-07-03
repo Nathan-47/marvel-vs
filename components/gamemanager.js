@@ -40,24 +40,11 @@ let GameManager = {
             player.classType.toLowerCase() + '.png" class="assets/images"><div><h3>' + player.classType + '</h3><p class="health-player"><progress id="healthBarOne" value="100" max="100"> ' + player.health + ' </progress></p></div>';
     },
     
-        setPreFight: function () {
-            let getActions = document.querySelector(".actions");
-    
-            TODO:// Place the not Marvel logo here
-            // getHeader.innerHTML = '<p>Task: Find an opponent</p>';
 
-
-            //Search for opponent to battle
-            getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="GameManager.setFight()">Search for Opponent</a>';        
-        },
         
-
-
-
         // ENEMY BATTLE STAT SETTINGS
         
         setFight: function () {
-            let getActions = document.querySelector(".actions");
             let getEnemy = document.querySelector(".enemy");
             
 
