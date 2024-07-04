@@ -22,7 +22,6 @@ let PlayerMoves = {
     let getEnemySpeed = enemy.speed;
 
 
-
     //Player attacks
     let playerAttack = function () {
       let calcBaseDamage;
@@ -49,6 +48,22 @@ let PlayerMoves = {
     };
 
 
+    // HUD Components 
+
+  //  FIXME: Why does health of both player and enemy not show simultaneously in arena 
+
+      // display battle data on screen arena
+   const displayHealth = function(arenaPlayer) {
+      document.querySelector('.arenaPlayer').textContent = arenaPlayer;
+    }
+        // Allows the porgress health bar to read the player and enemy health
+        let getPlayerHealth = document.getElementById("healthBarOne");
+        getPlayerHealth.value = player.health;
+    
+        let getEnemyHealth = document.getElementById("healthBarTwo");
+        getEnemyHealth.value = enemy.health;
+
+     // HUD Components 
 
 
     //Enemy attacks
@@ -76,15 +91,6 @@ let PlayerMoves = {
       return attackValues;
     };
 
-
-    // Allows the porgress health bar to read the player and enemy health
-    let getPlayerHealth = document.getElementById("healthBarOne");
-    getPlayerHealth.value = player.health;
-
-    let getEnemyHealth = document.getElementById("healthBarTwo");
-    getEnemyHealth.value = enemy.health;
-
-
     // Enemy health boost 
     function enemyHealthBoost () {
             // Enemy receives boost depending on their durability and fight IQ status
@@ -96,12 +102,6 @@ let PlayerMoves = {
     }
 
 
-    // display battle data on screen arena
-    const displayHealth = function(arena) {
-      document.querySelector('.arena').textContent = arena;
-    }
-
-
     //Initiate Attacks - If player is faster than they attack first if not then enemy attacks first
     if (getPlayerSpeed >= getEnemySpeed) {
       let playerAttackValues = playerAttack();
@@ -109,9 +109,8 @@ let PlayerMoves = {
       let totalDamage = playerAttackValues[0] * playerAttackValues[1];
 
       enemy.health = enemy.health - totalDamage;
-      console.log(enemy.health);
 
-      alert(`${player.classType}` +  "did"  +  playerAttackValues[0]  +  "damage"  +  playerAttackValues[1]  +  "times.");
+      displayHealth(`${player.classType}` +  playerAttackValues[0]  +  "damage"  +  playerAttackValues[1]  +  "times.");
       
       // Display enemy health updates
       enemy.health += 1;
@@ -119,6 +118,11 @@ let PlayerMoves = {
       //When enemy is at less than or equal to 0 health then the game will announce that the user has won the fight
       if (enemy.health <= 0) {
         displayHealth(`${player.classType} wins!`);
+        document.getElementById('item-roll').classList.add('hidden');
+        document.getElementById('end-battle').classList.add('hidden');
+        document.getElementById('opponent-search').classList.add('hidden');
+        document.getElementById('start-fight').classList.add('hidden');
+        document.getElementById('end-battle-final').classList.remove('hidden');
       }
 
       else {
@@ -127,7 +131,7 @@ let PlayerMoves = {
           let totalDamage = enemyAttackValues[0] * enemyAttackValues[1];
           player.health = player.health - totalDamage;
           
-      alert(`${enemy.enemyType}` +  enemyAttackValues[0]  +  "damage"  +  enemyAttackValues[1]  +  "times.");
+      displayHealth(`${enemy.enemyType}` +  enemyAttackValues[0]  +  "damage"  +  enemyAttackValues[1]  +  "times."); 
       
       // Display player health updates
       player.health += 1;
@@ -142,7 +146,7 @@ let PlayerMoves = {
 
             player.health = player.health - totalDamage;
             
-            alert(`${classType}` + enemyAttackValues[0] + "damage" + enemyAttackValues[1] + "times.");
+            displayHealth(`${player.classType}` + enemyAttackValues[0] + "damage" + enemyAttackValues[1] + "times.");
               
               //When player is at less than or equal to 0 health then the game will announce that the user has won the fight
             if (player.health <= 0) {
