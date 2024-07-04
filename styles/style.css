@@ -121,7 +121,11 @@ h1 {color: #fafafa;}
   opacity: 0.9;
 }
 
-.arena {
+.userHud {
+  display: flex;
+}
+
+.arena, .arenaOne {
   width: 100%;
   height: 100px;
   background-color: #fafafabc;
