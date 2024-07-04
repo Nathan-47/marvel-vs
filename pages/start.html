@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>not Marvel Battle</title>
+    <title>Marvel Battle JS</title>
 
     <link rel="stylesheet" href="../styles/style.css" />
     <script src="../components/gamemanager.js"></script>
@@ -48,15 +48,26 @@
       </a>
     </div>
 
-    <div class="actions">
+    <div class="enemy">
+      <!-- // enemy will be displayed here in game -->
     </div>
 
-    <div class="arena">
-      <br />
-      <button onclick="PlayerMoves.calcAttack()">Fight</button>
-    </div>
 
-    <div class="enemy"></div>
+    <div class="userHud">
+      <div class="arena">
+        <p class="arenaPlayer"></p>
+      </div>
+
+      <div class="arenaOne">
+         <button id="opponent-search" onclick="GameManager.setFight()">Search for Opponent</button>
+      
+         <button id="start-fight" onclick="PlayerMoves.calcAttack()">Fight</button>
+
+         <button id="item-roll" onclick="">Infinity Stone</button>
+
+        <button id="end-battle" onclick="">MRVL</button>
+      </div>
+</div>
 
   </body>
 </html>
