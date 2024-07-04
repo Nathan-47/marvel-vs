@@ -125,12 +125,23 @@ h1 {color: #fafafa;}
   display: flex;
 }
 
-.arena, .arenaOne {
+.arena {
   width: 100%;
   height: 100px;
   background-color: #fafafabc;
-  padding-top: 50px;
+  padding: 20px;
   text-align: center;
+}
+
+.arenaOne {
+  width: 100%;
+  height: 100px;
+  background-color: #fafafabc;
+  padding: 20px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
 .enemy {
