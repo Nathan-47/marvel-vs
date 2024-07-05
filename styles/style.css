@@ -203,3 +203,7 @@ progress::-webkit-progress-value {
 .hidden {
   display: none;
 }
+
+#end-battle-final {
+  display: none;
+}
