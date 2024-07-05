@@ -48,7 +48,9 @@ let PlayerMoves = {
     };
 
 
-    // HUD Components 
+
+
+    // HUD Components //
 
   //  FIXME: Why does health of both player and enemy not show simultaneously in arena 
 
@@ -63,7 +65,18 @@ let PlayerMoves = {
         let getEnemyHealth = document.getElementById("healthBarTwo");
         getEnemyHealth.value = enemy.health;
 
-     // HUD Components 
+        // Game End updates
+        const endGame = function () {
+          document.getElementById('item-roll').classList.add('hidden');
+          document.getElementById('end-battle').classList.add('hidden');
+          document.getElementById('opponent-search').classList.add('hidden');
+          document.getElementById('start-fight').classList.add('hidden');
+          document.getElementById('end-battle-final').style.display = "block";
+        }
+
+     // HUD Components //
+
+
 
 
     //Enemy attacks
@@ -91,8 +104,9 @@ let PlayerMoves = {
       return attackValues;
     };
 
+    
     // Enemy health boost 
-    function enemyHealthBoost () {
+    const enemyHealthBoost = function () {
             // Enemy receives boost depending on their durability and fight IQ status
             if (enemy.health <= 20 && enemy.durability >= 50 && enemy.fightIq > 50) {
               console.log('enemy recieves power buff');
@@ -118,11 +132,7 @@ let PlayerMoves = {
       //When enemy is at less than or equal to 0 health then the game will announce that the user has won the fight
       if (enemy.health <= 0) {
         displayHealth(`${player.classType} wins!`);
-        document.getElementById('item-roll').classList.add('hidden');
-        document.getElementById('end-battle').classList.add('hidden');
-        document.getElementById('opponent-search').classList.add('hidden');
-        document.getElementById('start-fight').classList.add('hidden');
-        document.getElementById('end-battle-final').classList.remove('hidden');
+        endGame();
       }
 
       else {
@@ -151,15 +161,16 @@ let PlayerMoves = {
               //When player is at less than or equal to 0 health then the game will announce that the user has won the fight
             if (player.health <= 0) {
               displayHealth(`${enemy.enemyType} wins!`);
+              endGame();
             }
             
             else {
 
-                //Player Attacks
-                let playerAttackValues = playerAttack();
-                let totalDamage = playerAttackValues[0] * playerAttackValues[1];
+              //Player Attacks
+              let playerAttackValues = playerAttack();
+              let totalDamage = playerAttackValues[0] * playerAttackValues[1];
 
-            enemy.health = enemy.health - totalDamage;
+              enemy.health = enemy.health - totalDamage;
 
             alert(`${enemy.enemyType}` +  playerAttackValues[0]  +  "damage"  +  playerAttackValues[1]  +  "times.");
 
