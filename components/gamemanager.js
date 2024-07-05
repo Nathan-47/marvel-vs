@@ -4,7 +4,6 @@
 let GameManager = {
     setGameStart: function(classType) {
     this.setPlayer(classType);
-    this.setPreFight();
     },
     
         //This allows for users to choose what fighter they want and be able to see the stats of the fighter.
@@ -29,7 +28,6 @@ let GameManager = {
                 break;
             
                 default:
-    
         }
     
         //All data within the interface tag found in the index page will be taken and deleted, so that the new content in the let variable
