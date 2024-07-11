@@ -67,6 +67,7 @@ let PlayerMoves = {
       document.querySelector('.arenaEnemy').textContent = arenaEnemy;
     }
 
+
         // Allows the porgress health bar to read the player and enemy health
         let getPlayerHealth = document.getElementById("healthBarOne");
         getPlayerHealth.value = player.health;
@@ -75,6 +76,11 @@ let PlayerMoves = {
     
         let getEnemyHealth = document.getElementById("healthBarTwo");
         getEnemyHealth.value = enemy.health;
+
+
+        // Infinity stone dice roll for power up
+        const stoneRoll = document.getElementById('item-roll');
+
 
         // Game End updates
         const endGame = function () {
@@ -90,6 +96,34 @@ let PlayerMoves = {
      // HUD Components //
 
 
+     // Player Infinity Stone Dice Functionality
+
+     // Select .roll that gives number
+     stoneRoll.addEventListener('click', function () {
+      const randomNum = Math.trunc(Math.random() * 6) + 1;
+    
+      console.log(randomNum);
+
+     // If number is 1 then instant death for player as stones are too powerful
+     if (randomNum === 1) {
+      player.health = 0;
+      displayHealth(`The stones were too powerful to handle!, ${enemy.enemyType} wins`);
+      endGame();
+     }     
+     
+     // Else gives player either more speed or strength 
+     else if (randomNum === 2 || 4 ) {
+      player.health = player.strength + 10;
+      stoneRoll.classList.add('hidden');
+     }
+
+     // If a number other than the above is rolled then game carries on
+     else {
+      stoneRoll.classList.add('hidden');
+     }
+    });
+
+     // Player Infinity Stone Dice Functionality
 
 
     //Enemy attacks
