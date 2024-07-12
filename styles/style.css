@@ -6,12 +6,16 @@ img {
   margin: 0;
   padding: 0;
   text-decoration: none;
+  font-family: 'silkscreen', sans-serif;
 }
 
 body {
   background-color: #1b1b1b;
+  
 }
-
+.p {
+  font-family: 'silkscreen', sans-serif;
+}
 .header {
   background-color: #1b1b1b;
   height: 100px;
@@ -23,7 +27,6 @@ body {
 }
 
 .header p {
-  font-family: arial;
   font-size: 18px;
   color: #fff;
   padding-bottom: 4px;
@@ -64,22 +67,21 @@ h1 {color: #fafafa;}
 .interface div {
   width: 220px;
   padding: 0 10px 0 20px;
-  background-color: #211510;
 }
 
 .interface a:hover div {
   background-color: #3c1d3d;
 }
 
-.interface h3 {
+/* .interface h3 {
   font-family: "Acme", sans-serif;
   font-size: 22px;
   color: #f8b700;
   padding: 12px 0 4px;
-}
+} */
 
 .interface p {
-  font-family: arial;
+  font-family: 'silkscreen', sans-serif;
   font-size: 12px;
   color: #d5c8af;
   line-height: 20px;
@@ -166,22 +168,20 @@ h1 {color: #fafafa;}
 .enemy div {
   width: 220px;
   padding: 0 10px 0 20px;
-  background-color: #211510;
 }
 
-.enemy a:hover div {
+/* .enemy a:hover div {
   background-color: #3c1d3d;
-}
+} */
 
 .enemy h3 {
-  font-family: "Acme", sans-serif;
   font-size: 22px;
   color: #f8b700;
   padding: 12px 0 4px;
 }
 
 .enemy p {
-  font-family: arial;
+  font-family: 'silkscreen', sans-serif;
   font-size: 12px;
   color: #d5c8af;
   line-height: 20px;
