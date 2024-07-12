@@ -199,11 +199,15 @@ progress::-webkit-progress-value {
   background-color: green;
   border-radius: 0px;
 }
-
+.userHud {
+  display: none;
+}
+.openHidden {
+  display: flex;
+}
 .hidden {
   display: none;
 }
-
 #end-battle-final {
   display: none;
 }
