@@ -40,7 +40,7 @@ let PlayerMoves = {
 
       //Number of hits the fighter makes
       let numberOfHits =
-        Math.trunc((Math.random() * Math.round(player.speed / 10)) / 2) + 1;
+        Math.trunc((Math.random() * Math.round(player.speed / 10)) / 4) + 1;
 
       //Place the total damage in an array to gives the number and return it to the user
       let attackValues = [calcOutputDamage, numberOfHits];
@@ -61,11 +61,11 @@ let PlayerMoves = {
 
       const displayPlayerHealth = function(arenaPlayer) {
       document.querySelector('.arenaPlayer').textContent = arenaPlayer;
-    };
+      };
     
     const displayEnemyHealth = function(arenaEnemy) {
       document.querySelector('.arenaEnemy').textContent = arenaEnemy;
-    }
+     };
 
 
         // Allows the porgress health bar to read the player and enemy health
@@ -77,6 +77,11 @@ let PlayerMoves = {
         let getEnemyHealth = document.getElementById("healthBarTwo");
         getEnemyHealth.value = enemy.health;
 
+        // Display player health in integars
+        document.querySelector('.playerNumberHealth').textContent = player.health;
+
+        // Display enemy health in integars
+        document.querySelector('.enemyNumberHealth').textContent = enemy.health;
 
         // Infinity stone dice roll for power up
         const stoneRoll = document.getElementById('item-roll');
