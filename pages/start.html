@@ -12,35 +12,35 @@
   </head>
   <body>
     <div class="header">
-      <h1>Choose your fighter</h1>
+      <h1 class="main-heading">Choose your fighter</h1>
     </div>
 
     <div class="interface">
       <!--onClick allows user to pick what fighter they can battle with-->
       
       <!-- When clicked gamemanager script will initialise and create an battle with selected fighter ready -->
-      <a href="#" onclick="GameManager.setGameStart('Hulk'); openHud();">
+      <a href="#" onclick="GameManager.setGameStart('Hulk'); gameSetInit();">
         <img src="#" alt="hulk" />
         <div>
           <h3>Hulk</h3>
         </div>
       </a>
 
-      <a href="#" onclick="GameManager.setGameStart('Iron Man'); openHud();">
+      <a href="#" onclick="GameManager.setGameStart('Iron Man'); gameSetInit();">
         <img src="#" alt="iron man" />
         <div>
           <h3>Iron Man</h3>
         </div>
       </a>
 
-      <a href="#" onclick="GameManager.setGameStart('Wolverine'); openHud();">
+      <a href="#" onclick="GameManager.setGameStart('Wolverine'); gameSetInit();">
         <img src="#" alt="wolverine" />
         <div>
           <h3>Wolverine</h3>
         </div>
       </a>
 
-      <a href="#" onclick="GameManager.setGameStart('Spiderman'); openHud();">
+      <a href="#" onclick="GameManager.setGameStart('Spiderman'); gameSetInit();">
         <img src="#" alt="spiderman" />
         <div>
           <h3>Spiderman</h3>
@@ -76,9 +76,20 @@
 
 
 <script>
+  // Function that executes when user selects a character
+  const gameSetInit = function () {
+    openHud();
+    hideHeading();
+  }
+
     // Hide HUD
     const openHud = function () {
     document.querySelector('.userHud').classList.add('openHidden');
+  }
+
+  // Hide the title when battle begins
+  const hideHeading = function () {
+    document.querySelector('.main-heading').classList.add('hidden');
   }
 </script>
   </body>
