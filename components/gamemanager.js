@@ -35,7 +35,7 @@ let GameManager = {
         let getInterface = document.querySelector(".interface");
         
         getInterface.innerHTML = '<img src="assets/images/' +
-            player.classType.toLowerCase() + '.png" class="assets/images"><div><h3>' + player.classType + '</h3><p class="health-player"><progress id="healthBarOne" value="100" max="100"> ' + player.health + ' </progress></p></div>';
+            player.classType.toLowerCase() + '.png" class="assets/images"><div><p>' + player.classType + '</p><p class="health-player"><progress id="healthBarOne" value="100" max="100"> ' + player.health + ' </progress></p><p class="playerNumberHealth"></p></div>';
     },
     
 
@@ -73,8 +73,8 @@ let GameManager = {
             }
     
             getEnemy.innerHTML = '<img src="assets/images/enemy/' +
-            enemy.enemyType.toLowerCase() + '.png" class="assets/images/enemy"><div><h3>' + enemy.enemyType + '</h3><p class="health-enemy"><progress id="healthBarTwo" value="100" max="100"> ' + enemy.health + ' </progress></p></div>';
+            enemy.enemyType.toLowerCase() + '.png" class="assets/images/enemy"><div><p>' + enemy.enemyType + '</p><p class="health-enemy"><progress id="healthBarTwo" value="100" max="100"> ' + enemy.health + ' </progress></p><p class="enemyNumberHealth"></p></div>';
         }
-    }
+    };
     
     
