@@ -10,8 +10,8 @@ img {
 }
 
 body {
-  background-color: #1b1b1b;
-  
+  background-color: #1b1b1b !important;
+  overflow-x: hidden;
 }
 .p {
   font-family: 'silkscreen', sans-serif;
@@ -37,8 +37,43 @@ body {
   font-size: 30px;
   color: #f8b700;
 }
-
 h1 {color: #fafafa;}
+
+
+/* start game */
+.start-container {
+  margin: 20px auto;
+  margin-top: 15em;
+  text-align: center;
+}
+.start-logo {
+  width: 15%;
+  padding-right: 1em;
+}
+#startBattle {
+  margin-top: 30px;
+  margin-bottom: 60px;
+  padding: 15px;
+  width: 20%;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+#startBattle:hover {
+  background: #1b1b1b;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  transition: 0.3s;
+}
+::selection {
+  color: #1b1b1b;
+  background: #ED1D24;
+}
+.start-built {
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+/* start game */
+
 
 .interface {
   padding: 0;
