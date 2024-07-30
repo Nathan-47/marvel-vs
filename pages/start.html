@@ -25,9 +25,11 @@
 
     <div class="interface">
       <!--onClick allows user to pick what fighter they can battle with-->
-      
+
+      <!-- When fighter is clicked the function will call the gamemanager script, thus initialise and create a battle with the selected fighter ready -->
+
       <div class="row">
-        <div class="col-4">
+        <div class="col">
           <img src="../images/front/hulk_front.svg" alt="hulk" />
           <br />
           <p><a href="#" class="character-alias" onclick="GameManager.setGameStart('Hulk'); gameSetInit();">
@@ -35,7 +37,7 @@
       </a></p>
         </div>
 
-        <div class="col-4">
+        <div class="col">
       <img src="../images/front/iron_man_front.svg" alt="iron man" />
       <br />
       <a href="#" class="character-alias" onclick="GameManager.setGameStart('Iron Man'); gameSetInit();">
@@ -43,28 +45,24 @@
       </a>
         </div>
 
-        <div class="col-4">
+        <div class="col">
       <img src="../images/front/wolverine_front.svg" alt="wolverine" />
       <br />
       <a href="#" class="character-alias" onclick="GameManager.setGameStart('Wolverine'); gameSetInit();">
           Wolverine
       </a>
         </div>
+
+        <div class="col">
+          <img src="../images/front/spiderman_front.svg" alt="spiderman" />
+          <br />
+          <a href="#" class="character-alias" onclick="GameManager.setGameStart('Spiderman'); gameSetInit();">
+              Spiderman
+          </a>
+            </div>
       </div>
       
-      <!-- When clicked gamemanager script will initialise and create an battle with selected fighter ready -->
 
-
-
-
-
-
-      <!-- <a href="#" onclick="GameManager.setGameStart('Spiderman'); gameSetInit();">
-        <img src="#" alt="spiderman" />
-        <div>
-          <p>Spiderman</p>
-        </div>
-      </a> -->
     </div>
 
     <div class="enemy">
@@ -99,6 +97,7 @@
   const gameSetInit = function () {
     openHud();
     hideHeading();
+    hideLogo();
   }
 
     // Hide HUD
@@ -109,6 +108,11 @@
   // Hide the title when battle begins
   const hideHeading = function () {
     document.querySelector('.main-heading').classList.add('hidden');
+  }
+
+  // Hide the logo when battle begins
+  const hideLogo = function () {
+    document.querySelector('.header img').classList.add('hidden');
   }
 </script>
   </body>
