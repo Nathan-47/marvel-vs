@@ -15,7 +15,7 @@ let GameManager = {
                     player = new Player(classType, 100, 70, 70, 70, 50);
                 break;
             
-                case "Iron Man":
+                case "Ironman":
                     player = new Player(classType, 100, 60, 50, 60, 30);
                 break;
             
@@ -34,8 +34,13 @@ let GameManager = {
         //below can be entered.
         let getInterface = document.querySelector(".interface");
         
-        getInterface.innerHTML = '<img src="assets/images/' +
-            player.classType.toLowerCase() + '.png" class="assets/images"><div><p>' + player.classType + '</p><p class="health-player"><progress id="healthBarOne" value="100" max="100"> ' + player.health + ' </progress></p><p class="playerNumberHealth"></p></div>';
+        getInterface.innerHTML = '<img src="../images/side/' +
+            player.classType.toLowerCase() + '.svg" class="assets/images"><div><p>' + player.classType + '</p><p class="health-player"><progress id="healthBarOne" value="100" max="100"> ' + player.health + ' </progress></p><p class="playerNumberHealth"></p></div>';
+
+        let getBattlePlayer = document.querySelector('.battle-player');
+
+        getBattlePlayer.innerHTML = '<img src="../images/side/' +
+            player.classType.toLowerCase() + '.svg" ';
     },
     
 
@@ -49,7 +54,7 @@ let GameManager = {
             //Create enemies
             let enemy00 = new Enemy("Magneto", 100, 20, 40, 60, 30);
             let enemy01 = new Enemy("Venom", 100, 50, 30, 50, 40);
-            let enemy02 = new Enemy("Abomination", 100, 70, 20, 60, 60);
+            let enemy02 = new Enemy("Redhulk", 100, 70, 20, 60, 60);
             let enemy03 = new Enemy("Sabretooth", 100, 40, 20, 50, 70);
             
 
@@ -72,8 +77,8 @@ let GameManager = {
                 break;
             }
     
-            getEnemy.innerHTML = '<img src="assets/images/enemy/' +
-            enemy.enemyType.toLowerCase() + '.png" class="assets/images/enemy"><div><p>' + enemy.enemyType + '</p><p class="health-enemy"><progress id="healthBarTwo" value="100" max="100"> ' + enemy.health + ' </progress></p><p class="enemyNumberHealth"></p></div>';
+            getEnemy.innerHTML = '<img src="../images/side/' +
+            enemy.enemyType.toLowerCase() + '.svg" class="../images/enemy"><div><p>' + enemy.enemyType + '</p><p class="health-enemy"><progress id="healthBarTwo" value="100" max="100"> ' + enemy.health + ' </progress></p><p class="enemyNumberHealth"></p></div>';
         }
     };
     
