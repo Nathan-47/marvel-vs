@@ -123,6 +123,7 @@ img {
 }
 #select-sprites {
   text-align: center;
+  margin-top: 12em;
 }
 #select-sprites img {
   width: 90px;
@@ -178,6 +179,16 @@ img {
 @media screen and (max-width: 400px) {
   .interface div {
       padding: 0 15px 0 15px;
+}
+}
+
+@media screen and (max-width: 300px) {
+.main-heading {
+    text-align: center;
+}
+.col {
+    width: 100% !important;
+    flex: auto !important;
 }
 }
 /* character select screen */
