@@ -178,7 +178,7 @@ img {
 
 @media screen and (max-width: 400px) {
   .interface div {
-      padding: 0 15px 0 15px;
+    padding: 0 15px 0 15px;
 }
 }
 
@@ -299,6 +299,7 @@ img {
   }
   .enemy div {
     right: 40em;
+}
 }
 
 @media screen and (max-width: 2150px) {
@@ -472,4 +473,3 @@ progress::-webkit-progress-value {
   border-radius: 0px;
 }
 /* Progress Bar styling */
-
