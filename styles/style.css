@@ -201,14 +201,14 @@ img {
 }
 .arena {
   width: 100%;
-  height: 100px;
+  height: 150px;
   background-color: #fafafabc;
   padding: 20px;
   text-align: center;
 }
 .arenaOne {
   width: 100%;
-  height: 100px;
+  height: 150px;
   background-color: #fafafabc;
   padding: 20px;
   text-align: center;
@@ -267,6 +267,195 @@ img {
 .interface p {
   font-size: 14px;
   color: #d5c8af;
+}
+
+
+
+
+@media screen and (min-width: 2345px) {
+  .interface img {
+    right: 50em;
+  }
+  .enemy img {
+    left: 50em;
+  }
+  .interface div {
+    left: 50em;
+  }
+  .enemy div {
+    right: 50em;
+  }
+}
+
+@media screen and (max-width: 2344px) {
+  .interface img {
+    right: 40em;
+  }
+  .enemy img {
+    left: 40em;
+  }
+  .interface div {
+    left: 40em;
+  }
+  .enemy div {
+    right: 40em;
+}
+
+@media screen and (max-width: 2150px) {
+  .interface img {
+    right: 30em;
+  }
+  .enemy img {
+    left: 30em;
+  }
+  .interface div {
+    left: 30em;
+  }
+  .enemy div {
+    right: 30em;
+}
+}
+
+@media screen and (max-width: 1745px) {
+  .interface img {
+    right: 20em;
+  }
+  .enemy img {
+    left: 20em;
+  }
+  .interface div {
+    left: 20em;
+  }
+  .enemy div {
+    right: 20em;
+}
+}
+
+@media screen and (max-width: 1550px) {
+  .interface img {
+    right: 50em;
+  }
+  .enemy img {
+    left: 50em;
+  }
+  .interface div {
+    left: 50em;
+  }
+  .enemy div {
+    right: 50em;
+  }
+  }
+
+@media screen and (max-width: 1545px) {
+  .interface img {
+    right: 20em;
+  }
+  .enemy img {
+    left: 20em;
+  }
+  .interface div {
+    left: 20em;
+  }
+  .enemy div {
+    right: 20em;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+.interface img {
+  right: 10em;
+}
+.enemy img {
+  left: 10em;
+}
+.interface div {
+  left: 10em;
+}
+.enemy div {
+  right: 10em;
+}
+}
+
+@media screen and (max-width: 1000px) {
+  .interface img {
+    right: 5em;
+  }
+  .enemy img {
+    left: 5em;
+  }
+  .interface div {
+    left: 5em;
+  }
+  .enemy div {
+    right: 5em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .interface img {
+    right: 1em;
+  }
+  .enemy img {
+    left: 1em;
+  }
+  .interface div {
+    left: 1em;
+  }
+  .enemy div {
+    right: 1em;
+  }
+  .arena, .arenaOne {
+    height: 180px;
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+.openHidden {
+    margin-top: 5em;
+    flex-wrap: wrap;
+}
+.arena {
+   padding: 70px;
+}
+}
+
+@media screen and (max-width: 400px) {
+.header {
+  display: none;
+}
+.interface img {
+  top: 1em;
+}
+.enemy img {
+  top: 10em;
+}
+.interface div {
+ top: 1em;
+}
+.enemy div {
+  top: 10em;
+}
+}
+
+@media screen and (max-width: 320px) {
+.interface img {
+  width: 60px;
+  height: 60px;
+}
+.enemy img {
+  width: 60px;
+  height: 60px;
+}
+}
+
+@media screen and (max-width: 300px) {
+.interface div {
+  left: 0em;
+}
+.enemy div {
+  left: 5em;
+}
 }
 /* battle screen */
 
