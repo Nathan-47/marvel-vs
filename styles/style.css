@@ -1,14 +1,9 @@
-img {
-  width: 160px;
-}
-
 * {
   margin: 0;
   padding: 0;
   text-decoration: none;
   font-family: 'silkscreen', sans-serif;
 }
-
 body {
   background-color: #1b1b1b !important;
   overflow-x: hidden !important;
@@ -16,9 +11,25 @@ body {
 .p {
   font-family: 'silkscreen', sans-serif;
 }
+.userHud {
+  display: none;
+}
+.openHidden {
+  display: flex;
+  margin-top: 5em;
+}
+.hidden {
+  display: none;
+}
+#end-battle-final {
+  display: none;
+}
 
 
 /* start game */
+img {
+  width: 160px;
+}
 .start-container {
   margin: 20px auto;
   margin-top: 15em;
@@ -101,17 +112,6 @@ body {
   margin-top: 10em;
   margin-bottom: 2em;
 }
-.header p {
-  font-size: 18px;
-  color: #fff;
-  padding-bottom: 4px;
-}
-.header h2 {
-  font-family: "Acme", sans-serif;
-  font-size: 30px;
-  color: #f8b700;
-}
-h1 {color: #fafafa;}
 .interface {
   padding: 0;
   width: 100%;
@@ -121,19 +121,21 @@ h1 {color: #fafafa;}
   background-color: #1b1b1b;
   margin-top: 12em;
 }
-.interface img {
+#select-sprites {
+  text-align: center;
+}
+#select-sprites img {
   width: 90px;
   height: 90px;
   margin: 15px auto;
 }
-.img-avatar {
-  width: 160px !important;
-  height: 160px !important;
-}
 .interface div {
-  /* width: 220px; */
+  width: 220px;
   padding: 0 10px 0 20px;
-  text-align: center;
+  text-align: left;
+  position: absolute;
+  top: 6em;
+  left: 6em;
 }
 .interface a:hover div {
   background-color: #3c1d3d;
@@ -181,46 +183,11 @@ h1 {color: #fafafa;}
 /* character select screen */
 
 
+/* battle screen */
 #btn--search {
   width: 50% !important;
   display: none;
 }
-
-.actions {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.actions a {
-  width: 33.33%;
-  padding: 10px 0px;
-  text-align: center;
-  font-size: 14px;
-  font-family: arial;
-  color: #1b1b1b;
-}
-
-.actions a:nth-of-type(1) {
-  background-color: #e64747;
-}
-
-.actions a:nth-of-type(2) {
-  background-color: #e6ce47;
-}
-
-.actions a:nth-of-type(3) {
-  background-color: #6de647;
-}
-
-.actions a:hover {
-  opacity: 0.9;
-}
-
-.userHud {
-    display: flex;
-}
-
 .arena {
   width: 100%;
   height: 100px;
@@ -228,7 +195,6 @@ h1 {color: #fafafa;}
   padding: 20px;
   text-align: center;
 }
-
 .arenaOne {
   width: 100%;
   height: 100px;
@@ -240,6 +206,7 @@ h1 {color: #fafafa;}
   grid-template-rows: repeat(2, 1fr);
 }
 
+/* enemy styling */
 .enemy {
   padding: 0;
   width: 100%;
@@ -248,7 +215,6 @@ h1 {color: #fafafa;}
   justify-content: center;
   background-color: #1b1b1b;
 }
-
 .enemy a {
   display: flex;
   flex-wrap: nowrap;
@@ -256,24 +222,42 @@ h1 {color: #fafafa;}
 .enemy div {
   width: 220px;
   padding: 0 10px 0 20px;
+  position: absolute;
+  top: 16em;
+  right: 6em;
 }
-
 /* .enemy a:hover div {
   background-color: #3c1d3d;
 } */
-
-.enemy h3 {
-  font-size: 22px;
-  color: #f8b700;
-  padding: 12px 0 4px;
-}
-
 .enemy p {
   font-family: 'silkscreen', sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   color: #d5c8af;
   line-height: 20px;
 }
+.enemy img {
+  width: 90px;
+  height: 90px;
+  margin: 15px auto;
+  position: fixed;
+  top: 14em;
+  left: 5em;
+}
+
+/* player styling */
+.interface img {
+  width: 90px;
+  height: 90px;
+  margin: 15px auto;
+  position: fixed;
+  top: 5em;
+  right: 5em;
+}
+.interface p {
+  font-size: 14px;
+  color: #d5c8af;
+}
+/* battle screen */
 
 
 /* Progress Bar styling */
@@ -287,34 +271,5 @@ progress::-webkit-progress-value {
   background-color: green;
   border-radius: 0px;
 }
-.userHud {
-  display: none;
-}
-.openHidden {
-  display: flex;
-}
-.hidden {
-  display: none;
-}
-#end-battle-final {
-  display: none;
-}
+/* Progress Bar styling */
 
-
-/* battle arena */
-.interface img {
-  width: 90px;
-  height: 90px;
-  margin: 15px auto;
-  position: fixed;
-  top: 5em;
-  right: 5em;
-}
-.enemy img {
-  width: 90px;
-  height: 90px;
-  margin: 15px auto;
-  position: fixed;
-  top: 14em;
-  left: 5em;
-}
