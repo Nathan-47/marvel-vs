@@ -23,18 +23,18 @@
       <h1 class="main-heading">Select Character</h1>
     </div>
 
-    <div class="interface">
+    
       <!--onClick allows user to pick what fighter they can battle with-->
 
       <!-- When fighter is clicked the function will call the gamemanager script, thus initialise and create a battle with the selected fighter ready -->
-
+       <div class="container" id="select-sprites">
       <div class="row">
         <div class="col">
           <img src="../images/front/hulk_front.svg" alt="hulk" />
           <br />
-          <p><a href="#" class="character-alias" onclick="GameManager.setGameStart('Hulk'); gameSetInit();">
+          <a href="#" class="character-alias" onclick="GameManager.setGameStart('Hulk'); gameSetInit();">
           Hulk
-      </a></p>
+        </a>
         </div>
 
         <div class="col">
@@ -61,10 +61,14 @@
           </a>
             </div>
       </div>
+    </div>
       
-
+<div class="interface">
     </div>
 
+    <div class="battle-player">
+      <!-- // player will be displayed here in game -->
+    </div>
     <div class="enemy">
       <!-- // enemy will be displayed here in game -->
     </div>
@@ -96,22 +100,18 @@
   // Function that executes when user selects a character
   const gameSetInit = function () {
     openHud();
-    hideHeading();
-    hideLogo();
+    hideElements();
   }
 
     // Hide HUD
-    const openHud = function () {
+  const openHud = function () {
     document.querySelector('.userHud').classList.add('openHidden');
   }
 
-  // Hide the title when battle begins
-  const hideHeading = function () {
+  // Hide the heading, logo and select screen sprites when battle begins
+  const hideElements = function () {
     document.querySelector('.main-heading').classList.add('hidden');
-  }
-
-  // Hide the logo when battle begins
-  const hideLogo = function () {
+    document.getElementById('select-sprites').classList.add('hidden');    
     document.querySelector('.header img').classList.add('hidden');
   }
 </script>
