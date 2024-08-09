@@ -473,3 +473,54 @@ progress::-webkit-progress-value {
   border-radius: 0px;
 }
 /* Progress Bar styling */
+
+
+/* How to play page */
+.htp-header {
+  background-color: #1b1b1b;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.htp-header img {
+  margin-top: 10em;
+  margin-bottom: 2em;
+}
+.htp-content {
+  width: 60%;
+  margin: auto;
+  margin-top: 10em;
+  margin-bottom: 6em;
+  color: #ffffff;
+}
+.htp-heading {
+  text-decoration: underline;
+}
+.htp-text {
+  margin-bottom: 2em;
+}
+
+
+
+
+@media screen and (max-width: 950px) {
+.htp-content {
+  width: 80%;
+}
+}
+
+@media screen and (max-width: 440px) {
+  .htp-content {
+    width: 90%;
+}
+}
+
+@media screen and (max-width: 300px) {
+  .htp-header img {
+    width: 200px ;
+  }
+}
+/* How to play page */
