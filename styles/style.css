@@ -455,9 +455,16 @@ img {
   .enemy div {
     right: 1em;
   }
+  .arena {
+    width: 50%;
+    padding: 20px;
+  }
+  .arenaOne {
+    width: 50%;
+  }
   .arena, .arenaOne {
     height: 130px;
-    padding: 15px;
+    padding: 0px;
   }
 }
 
@@ -465,9 +472,6 @@ img {
 .openHidden {
     margin-top: 5em;
     flex-wrap: wrap;
-}
-.arena {
-   padding: 70px;
 }
 }
 
