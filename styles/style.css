@@ -461,6 +461,9 @@ img {
   .arena {
     width: 50%;
     padding: 24px;
+    line-height: 1.8em;
+    padding: 18px;
+    font-size: 0.8rem;
   }
   .arenaOne {
     width: 50%;
@@ -472,6 +475,9 @@ img {
   .arenaPlayer, .arenaEnemy, #opponent-search, #item-roll {
     font-size: 0.8rem;
   }
+  .arenaPlayer{
+    margin-top: 3em;
+}
   #hud-logo img {
    width: 70px;
    margin-right: 0.5em;
@@ -502,10 +508,6 @@ img {
 }
 
 @media screen and (max-width: 450px) {
-.arena {
-  line-height: 2.5em;
-  padding: 18px;
-}
 .arenaOne {
   padding: 16px;
 }
@@ -526,6 +528,9 @@ img {
 }
 .header {
   margin-top: -3em;
+}
+.openHidden {
+  margin-top: 3em;
 }
 }
 
@@ -558,6 +563,15 @@ img {
 }
 .header img {
   width: 230px;
+}
+.openHidden {
+  margin-top: -3em;
+}
+.arenaPlayer, .arenaEnemy, #opponent-search, #item-roll, #start-fight {
+  font-size: 0.6rem;
+}
+#hud-logo img {
+  width: 50px;
 }
 }
 
