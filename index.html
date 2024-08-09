@@ -20,18 +20,21 @@
       <div class="start-logo">
         <img src="./images/logo/not_marvel_logo.svg" alt="Not Marvel JS Battle Game"/>
       </div>
-            <a class="start-battle-btn" href="#" onclick="locationChange()">
-              <button id="startBattle">Start Game</button></a>
+
+      <div class="row">
+        <div class="col-6">
+          <a class="start-battle-btn" href="./pages/start.html">
+            <button id="startBattle">Start Game</button></a>
+        </div>
+
+        <div class="col-6">
+          <a class="faq-btn" href="./pages/howtoplay.html">
+            How to Play</a>
+        </div>
+      </div>
 
             <p class="start-built">Built by Nathan Parchment</p>
     </div>
   </div>
   </body>
-
-  <script>
-    // When start game button is clicked this will take user to battle screen
-    const locationChange = function () {
-      location.href = "./pages/start.html";
-    }
-  </script>
 </html>
