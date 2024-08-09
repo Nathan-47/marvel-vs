@@ -91,7 +91,7 @@ let PlayerMoves = {
         const endGame = function () {
           document.getElementById('end-battle-final').style.display = "block";
           document.getElementById('item-roll').classList.add('hidden');
-          document.getElementById('end-battle').classList.add('hidden');
+          document.getElementById('hud-logo').classList.add('hidden');
           document.getElementById('opponent-search').classList.add('hidden');
           document.getElementById('start-fight').classList.add('hidden');
           document.querySelector('.arenaPlayer').classList.add('hidden');
