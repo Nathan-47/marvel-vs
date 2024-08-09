@@ -455,9 +455,12 @@ img {
   .enemy div {
     right: 1em;
   }
+  .header {
+    margin-top: 1em;
+  }
   .arena {
     width: 50%;
-    padding: 20px;
+    padding: 24px;
   }
   .arenaOne {
     width: 50%;
@@ -466,12 +469,45 @@ img {
     height: 130px;
     padding: 0px;
   }
+  .arenaPlayer, .arenaEnemy, #opponent-search, #item-roll {
+    font-size: 0.8rem;
+  }
+  #hud-logo img {
+   width: 70px;
+   margin-right: 0.5em;
+}
 }
 
 @media screen and (max-width: 500px) {
 .openHidden {
-    margin-top: 5em;
-    flex-wrap: wrap;
+  margin-top: 0em;
+  flex-wrap: wrap;
+}
+.arenaOne {
+  padding: 18px;
+}
+.interface img {
+  top: 1em;
+}
+.interface div {
+  top: 2em;
+}
+.enemy img {
+  top: 10em;
+}
+.enemy div {
+  right: 2em;
+  top: 10em;
+}
+}
+
+@media screen and (max-width: 450px) {
+.arena {
+  line-height: 2.5em;
+  padding: 18px;
+}
+.arenaOne {
+  padding: 16px;
 }
 }
 
@@ -487,6 +523,9 @@ img {
 }
 .enemy div {
   top: 10em;
+}
+.header {
+  margin-top: -3em;
 }
 }
 
