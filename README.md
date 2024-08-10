@@ -12,3 +12,6 @@ I built this project using JavaScript, bootstrap framework and CSS. In this proj
 2.	Once downloaded upload folder into VS Code, click the `live server extension` found bottom right of VS Code workspace and you are on your way.
 
 <br />
+
+## Note
+This project is in no way affiliated with Marvel. This project is intended as a development learning exercise.
