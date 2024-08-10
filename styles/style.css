@@ -209,6 +209,9 @@ img {
 .col {
     width: 50%; 
 }
+.header img {
+  margin-top: 6em;
+}
 }
 
 @media screen and (max-width: 500px) {
