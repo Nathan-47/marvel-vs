@@ -15,3 +15,5 @@ I built this project using JavaScript, bootstrap framework and CSS. In this proj
 
 ## Note
 This project is in no way affiliated with Marvel. This project is intended as a development learning exercise.
+
+Game may not be responsive on 700px devices. This will be updated in future.
