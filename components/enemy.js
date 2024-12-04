@@ -2,7 +2,7 @@
 
 let enemy;
 
-// Enemy player stats will read from this
+// Enemy player stats that will be integrated from values below
 function Enemy(enemyType, health, strength, speed, durability, fightIq) {
     this.enemyType = enemyType;
     this.health = health;
