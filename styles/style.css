@@ -193,6 +193,7 @@ img {
 } */
 .main-heading {
   color: #ffffff;
+  font-weight: bold;
 }
 .character-alias {
   font-family: 'silkscreen', sans-serif;
@@ -644,6 +645,7 @@ progress::-webkit-progress-value {
 }
 .htp-heading {
   text-decoration: underline;
+  margin-top: 2em;
 }
 .htp-text {
   margin-bottom: 2em;
