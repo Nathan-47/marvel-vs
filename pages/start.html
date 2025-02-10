@@ -90,7 +90,17 @@
       
          <button id="start-fight" onclick="PlayerMoves.calcAttack()">Fight</button>
 
-         <button id="item-roll">Infinity Stone</button>
+         <button id="start-fight">
+            <div class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Items
+            </div>
+            <ul class="dropdown-menu">
+              <li><div class="dropdown-item" id="item-roll">Infinity Stone</li>
+
+              <!-- This needs to send players back to start battle begin screen -->
+              <li><div class="dropdown-item">Teleport</li>
+            </ul>
+          </button>
 
         <button id="hud-logo">
           <img src="../images/logo/not_marvel_logo.svg" alt="not marvel logo" />
