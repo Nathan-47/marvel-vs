@@ -574,7 +574,7 @@ img {
 .openHidden {
   margin-top: -3em;
 }
-.arenaPlayer, .arenaEnemy, #opponent-search, #item-roll, #start-fight {
+.arenaPlayer, .arenaEnemy, #opponent-search, #item-roll, #start-fight, #hud-items {
   font-size: 0.6rem;
 }
 #hud-logo img {
