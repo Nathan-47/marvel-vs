@@ -10,6 +10,7 @@
     <script src="../components/gamemanager.js"></script>
     <script src="../components/player.js"></script>
     <script src="../components/enemy.js"></script>
+    <script src="../components/hudUpdate.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,7 +91,7 @@
       
          <button id="start-fight" onclick="PlayerMoves.calcAttack()">Fight</button>
 
-         <button id="start-fight">
+         <button id="hud-items">
             <div class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               Items
             </div>
@@ -113,20 +114,9 @@
   const gameSetInit = function () {
     openHud();
     hideElements();
+    fightInit();
   }
 
-  // Hide HUD
-  const openHud = function () {
-    document.querySelector('.userHud').classList.add('openHidden');
-  }
-
-  // Hide the heading, logo and select screen sprites when battle begins
-  const hideElements = function () {
-    document.querySelector('.main-heading').classList.add('hidden');
-    document.getElementById('select-sprites').classList.add('hidden');    
-    document.querySelector('.header img').classList.add('hidden');
-    document.querySelector('.faq-btn').classList.add('hidden');
-  }
 </script>
   </body>
 </html>
